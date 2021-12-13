@@ -21,7 +21,15 @@ def testView(request):
     cookie = cookie.replace('path=/,', "")
     cookie = cookie.replace('path=/', "")
     print(cookie)
-    # pages = request.POST.get('pages')
+    
+    try:
+        user = User.objects.get(username=username)
+        user.pages = int(user.pages) + int(pages)
+        user.save()
+    except User.DoesNotExist:
+        return HttpResponse("User not found when trying to update pages printed attribute", status=501)
+    except Exception:
+        return HttpResponse("Something terrible happened :) ", status=501)
 
     r = requests.post(
         'http://192.168.20.212:8000/rps/pprint.cgi/', data=allParams, files=request.FILES, headers={"Cookie": cookie})
@@ -47,7 +55,7 @@ def login(request):
         if not user.is_password_correct(password):
             raise Exception('wrong pass')
     except:
-        return HttpResponse("wrong username or password")
+        return HttpResponse("wrong username or password", status=401)
 
     # login into printer
     try:
@@ -74,7 +82,7 @@ def login(request):
         return JsonResponse({"cookie": finalCookie, "username": username})
 
     except:
-        return HttpResponse("printer login failed")
+        return HttpResponse("printer login failed", status=401)
 
 
 @csrf_exempt
