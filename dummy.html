@@ -1,0 +1,1434 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="content-script-type" content="text/javascript" />
+    <meta http-equiv="content-style-type" content="text/css" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache,no-store,max-age=0" />
+    <meta http-equiv="expires" content="Thu, 01 Jan 1970 00:00:00 GMT" />
+    <link rel="shortcut icon" type="image/x-icon" href="media/favicon.ico" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/common2.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/device.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+      href="css/LanguageDependent/en.css"
+    />
+    <link rel="stylesheet" type="text/css" media="all" href="css/empty.css" />
+    <script language="JavaScript" type="text/javascript">
+      //<![CDATA[
+      CacheImage1 = new Image();
+      CacheImage2 = new Image();
+      CacheImage3 = new Image();
+      CacheImage4 = new Image();
+      CacheImage5 = new Image();
+      CacheImage6 = new Image();
+      CacheImage7 = new Image();
+      CacheImage8 = new Image();
+      CacheImage1.src = "media/navigation_bg_nu.gif";
+      CacheImage2.src = "media/navigation_bg_fc.png";
+      CacheImage3.src = "media/navigation_bg_su.png";
+      CacheImage4.src = "media/navigation_bg_selected.png";
+      CacheImage5.src = "media/listsubmenumark_ic2.gif";
+      CacheImage6.src = "media/command_bg_nu.gif";
+      CacheImage7.src = "media/command_bg_fc.gif";
+      CacheImage8.src = "media/command_bg_su.gif";
+      //]]>
+    </script>
+
+    <title>
+      Remote UI : Direct Print Job Sending Complete : iR-ADV&nbsp;C3525&nbsp;III
+      : iR-ADV&nbsp;C3525&nbsp;III
+    </title>
+  </head>
+  <body>
+    <script language="JavaScript" type="text/javascript">
+      //<![CDATA[
+      function reload_click() {
+        load_print();
+      }
+      function go_jobindex() {
+        var cgi_str = "./jstatpri.cgi?Flag=Init_Data&CorePGTAG=1&";
+        var now_time = new Date();
+        cgi_str += "Dummy=" + now_time.getTime();
+        top.window.location.href = cgi_str;
+      }
+      function return_click() {
+        var cgi_str = "./ppdf.cgi?CorePGTAG=19&Type=PDF&";
+        var now_time = new Date();
+        cgi_str += "Dummy=" + now_time.getTime();
+        document.location.href = cgi_str;
+      }
+      //]]>
+    </script>
+    <script language="JavaScript" type="text/javascript">
+      //<![CDATA[
+      comidxGlobal = {
+        has_reader: "true",
+        has_send: "true",
+        has_fax: "false",
+        has_rmt_cpy_send: "false",
+        disp_copy: "true",
+        disp_box: "true",
+        disp_sys_fax_box: "true",
+        disp_send: "true",
+        disp_sbox: "false",
+        disp_mem: "true",
+        disp_log: "true",
+        disp_coin: "false",
+        has_ps: "true",
+        has_psk: "false",
+        has_pdf: "true",
+        has_img: "true",
+        has_xps: "true",
+        has_mso: "false",
+        has_faxpkg: "false",
+        has_sendpkg: "true",
+        is_acq_on: "false",
+        has_efi: "false",
+        has_mlib: "true",
+        com_cur_tag: "1",
+        has_airfax_clie: "false",
+        use_usb_host: "true",
+        use_usb_strg_meap: "false",
+        VARIE_PNCHR_DIE_NAME: "false",
+        VARIE_BOX_USER: "true",
+        hasMeapLogin: "false",
+        hasBoxAllSetting: "true",
+        smb_use: "false",
+        webdav_use: "false",
+        sbox_smb_open: "false",
+        sbox_webdav_open: "false",
+        stat_model_sz: "2",
+        model_sz_a: "2",
+        HasAuth_Device: "false",
+        HasAuth_Network: "false",
+        HasAuth_System: "false",
+        AuthKind: "1",
+        UserType: "1",
+        IsRestrictedUser: "false",
+        AirAuthGenericFlg: "4",
+        AirAuthDeviceFlg: "8",
+        AirAuthNetwkFlg: "16",
+        AirAuthSystemFlg: "32",
+        AuthKindNone: "1",
+        AuthKindCpca: "2",
+        UserTypeAdmin: "2",
+      };
+      function ie6LayoutFixListener() {
+        if (!/MSIE 6\./.test(navigator.userAgent)) {
+          return;
+        }
+        var appContents = document.getElementById("applicationContents");
+        var contents = document.getElementById("contentsWrapper");
+        var navigation = document.getElementById("navigationWrapper");
+        if (!contents || !navigation) {
+          return;
+        }
+        appContents.style.height =
+          contents.offsetHeight > navigation.offsetHeight
+            ? contents.offsetHeight
+            : navigation.offsetHeight;
+      }
+      (function () {
+        if (!/MSIE 6\./.test(navigator.userAgent)) {
+          return;
+        }
+        window.attachEvent("onresize", ie6LayoutFixListener);
+        window.attachEvent("onload", ie6LayoutFixListener);
+      })();
+      (function () {
+        if (!/MSIE 8\./.test(navigator.userAgent)) {
+          return;
+        }
+        function ie8LayoutFixListener() {
+          document.body.style.visiblity = "visible";
+        }
+        window.attachEvent("onload", ie8LayoutFixListener);
+      })();
+      function com_index_base_interface() {
+        this.tbl = null;
+        this.createTbl = null;
+      }
+      function Adrs_NormalAdrsDrawCondition() {
+        if ("true" == comidxGlobal.disp_send) {
+          if (
+            "true" == comidxGlobal.has_send ||
+            "true" == comidxGlobal.has_fax ||
+            "true" == comidxGlobal.has_airfax_clie
+          ) {
+            return true;
+          }
+        }
+        return false;
+      }
+      var com_index = new (function () {
+        this.checkAuth = function (checkAuthFlg) {
+          if (null == checkAuthFlg) {
+            return true;
+          }
+          if (comidxGlobal.AirAuthGenericFlg & checkAuthFlg) {
+            return true;
+          }
+          if (comidxGlobal.UserTypeAdmin != comidxGlobal.UserType) {
+            return false;
+          }
+          var AuthJsonAry = [
+            {
+              chkflg: comidxGlobal.AirAuthDeviceFlg,
+              auth: comidxGlobal.HasAuth_Device,
+            },
+            {
+              chkflg: comidxGlobal.AirAuthNetwkFlg,
+              auth: comidxGlobal.HasAuth_Network,
+            },
+            {
+              chkflg: comidxGlobal.AirAuthSystemFlg,
+              auth: comidxGlobal.HasAuth_System,
+            },
+          ];
+          for (property in AuthJsonAry) {
+            if (!(AuthJsonAry[property].chkflg & checkAuthFlg)) {
+              continue;
+            }
+            if ("true" == AuthJsonAry[property].auth) {
+              return true;
+            }
+          }
+          return false;
+        };
+        this.getTree = function (key) {
+          return this.seek_tbl_Top(key);
+        };
+        this.getCgistr = function (key) {
+          var foundTable = this.seek_tbl(this.seek_tbl_Top(key), key);
+          if (foundTable) {
+            return foundTable.cgi_str;
+          }
+        };
+        this.getTopTbl = function (key) {
+          function findTopTble(tree) {
+            for (var propaty in tree) {
+              if (
+                tree[propaty].c_func &&
+                com_index.checkAuth(tree[propaty].auth_flg) &&
+                tree[propaty].pgtag_idx
+              ) {
+                return tree[propaty];
+              }
+              if (null != tree[propaty].tbl) {
+                foundCgiStr = findTopTble(tree[propaty].tbl);
+                if (foundCgiStr) {
+                  return foundCgiStr;
+                }
+              }
+            }
+          }
+          return findTopTble(this.seek_tbl_Top(key));
+        };
+        this.getTopCgistr = function (key) {
+          return this.getTopTbl(key).cgi_str;
+        };
+        this.getTopCorePgtagstr = function (key) {
+          return this.getTopTbl(key).pgtag_idx;
+        };
+        this.menuapi = function () {};
+        this.seek_tbl_Top = function (key) {
+          var PgtagFunctionTbl = new Array(
+            { pgtagMin: 1, pgtagMax: 14, func: com_index.sysmonitor },
+            { pgtagMin: 16, pgtagMax: 18, func: com_index.box },
+            { pgtagMin: 19, pgtagMax: 23, func: com_index.direct },
+            { pgtagMin: 24, pgtagMax: 24, func: com_index.address },
+            { pgtagMin: 25, pgtagMax: 44, func: com_index.usermode }
+          );
+          var targetTBL;
+          for (var i = 0; i < PgtagFunctionTbl.length; i++) {
+            if (
+              PgtagFunctionTbl[i].pgtagMin <= key &&
+              key <= PgtagFunctionTbl[i].pgtagMax
+            ) {
+              if (null == PgtagFunctionTbl[i].func.tbl) {
+                PgtagFunctionTbl[i].func.createTbl();
+              }
+              return PgtagFunctionTbl[i].func.tbl;
+            }
+          }
+        };
+        this.seek_tbl = function (targetTBL, key) {
+          for (var Draw_Item in targetTBL) {
+            if (key == targetTBL[Draw_Item].pgtag_idx) {
+              return targetTBL[Draw_Item];
+            }
+            if (null != targetTBL[Draw_Item].tbl) {
+              var foundTbl = this.seek_tbl(targetTBL[Draw_Item].tbl, key);
+              if (foundTbl) {
+                return foundTbl;
+              }
+            }
+          }
+          return null;
+        };
+      })();
+      function ComIdx_DrawLink() {
+        com_index.menuapi.draw_sub_link_menu();
+      }
+      com_index.menuapi.draw_list = function (tbl) {
+        var now_time = new Date();
+        document.writeln('<li class="');
+        document.write(
+          tbl.pgtag_idx == comidxGlobal.com_cur_tag ? "Selected" : "Standby"
+        );
+        document.write('">');
+        document.write('<a href="');
+        document.write(tbl.cgi_str + "&Dummy=" + now_time.getTime());
+        document.write('">');
+        document.write(tbl.title_str);
+        document.write("<\/a>");
+        document.writeln("<\/li>");
+      };
+      com_index.menuapi.draw_sub_link_submenu = function (tbl) {
+        for (var i = 0; i < tbl.length; i++) {
+          if (false == tbl[i].c_func) {
+            continue;
+          }
+          if (false == com_index.checkAuth(tbl[i].auth_flg)) {
+            continue;
+          }
+          com_index.menuapi.draw_list(tbl[i]);
+        }
+      };
+      function getRebootButtunStat() {
+        if ("true" == comidxGlobal.IsRestrictedUser) {
+          return false;
+        }
+        if ("true" == comidxGlobal.hasMeapLogin) {
+          if (
+            "false" == comidxGlobal.HasAuth_Device &&
+            "false" == comidxGlobal.HasAuth_Network &&
+            "false" == comidxGlobal.HasAuth_System
+          ) {
+            return false;
+          }
+        } else {
+          if ("true" == "true") {
+            if ("true" != "false") {
+              return false;
+            }
+          }
+        }
+        return true;
+      }
+      com_index.menuapi.draw_sub_link_menu = function () {
+        var tbl = com_index.getTree(comidxGlobal.com_cur_tag);
+        if (!tbl) {
+          return;
+        }
+        if (com_index.usermode.tbl == tbl) {
+          document.write('<fieldset id="rebootModule">');
+          document.write("<legend>");
+          document.write("Restart Device ");
+          document.write("<\/legend>");
+          document.write('<span class="Supplement">');
+          document.write("Restart the device from here. ");
+          document.write("<\/span>");
+          if (getRebootButtunStat()) {
+            document.write(
+              '<input type="button" class="ButtonEnable" value="Restart Device " onclick="JavaScript:reboot_click()" \/>'
+            );
+          } else {
+            document.write(
+              '<input type="button" class="ButtonEnable" value="Restart Device " onclick="JavaScript:reboot_click()" disabled="disabled" \/>'
+            );
+          }
+          document.write("<br \/>");
+          if ("false" == comidxGlobal.IsRestrictedUser) {
+            document.write(
+              '<input type="button" class="ButtonEnable" value="Apply Setting Changes " onclick="JavaScript:dynamic_update_click()" \/>'
+            );
+          } else {
+            document.write(
+              '<input type="button" class="ButtonEnable" value="Apply Setting Changes " onclick="JavaScript:dynamic_update_click()" disabled="disabled" \/>'
+            );
+          }
+          document.write("<\/fieldset>");
+        }
+        for (var i = 0; i < tbl.length; i++) {
+          if (false == tbl[i].c_func) {
+            continue;
+          }
+          if (false == com_index.checkAuth(tbl[i].auth_flg)) {
+            continue;
+          }
+          document.writeln('<ul class="Main">');
+          if (null == tbl[i].tbl) {
+            com_index.menuapi.draw_list(tbl[i]);
+          } else {
+            document.write('<li class="MainItem">');
+            document.write('<span class="GroupTitle">');
+            document.write(tbl[i].title_str);
+            document.write("<\/span>");
+            document.write('<ul class="Sub">');
+            com_index.menuapi.draw_sub_link_submenu(tbl[i].tbl);
+            document.write("<\/ul>");
+            document.write("<\/li>");
+          }
+          document.writeln("<\/ul>");
+        }
+        ie6LayoutFixListener();
+      };
+      function reboot_click() {
+        var now_time = new Date();
+        document.location.href =
+          "./caboot.cgi?PageFlag=c_rbt.tpl&Flag=Init_Reboot&Dummy=" +
+          now_time.getTime();
+      }
+      function dynamic_update_click() {
+        var now_time = new Date();
+        document.location.href =
+          "./cnwupdt.cgi?PageFlag=c_nwupdt.tpl&Flag=Init_Data&FuncTypeFlag=Init_Request&Token=21932990161657665071&Dummy=" +
+          now_time.getTime();
+      }
+      com_index.sysmonitor = new com_index_base_interface();
+      com_index.sysmonitor.createTbl = function () {
+        com_index.sysmonitor.tbl = (function () {
+          function CpyJobDrawCondition() {
+            return (
+              "true" == comidxGlobal.has_reader &&
+              "true" == comidxGlobal.disp_copy
+            );
+          }
+          function SndJobDrawCondition() {
+            return (
+              "true" == comidxGlobal.has_send ||
+              "true" == comidxGlobal.has_fax ||
+              "true" == comidxGlobal.has_airfax_clie
+            );
+          }
+          function RcvJobDrawCondition() {
+            return (
+              "true" == comidxGlobal.has_send || "true" == comidxGlobal.has_fax
+            );
+          }
+          function SvJobDrawCondition() {
+            if ("true" != comidxGlobal.has_reader) {
+              return false;
+            }
+            if (
+              "false" == comidxGlobal.disp_mem &&
+              "false" == comidxGlobal.disp_sbox
+            ) {
+              return false;
+            }
+            if (
+              "false" == comidxGlobal.disp_sbox &&
+              "true" == comidxGlobal.disp_mem
+            ) {
+              if (
+                "false" == comidxGlobal.use_usb_host ||
+                "true" == comidxGlobal.use_usb_strg_meap
+              ) {
+                return false;
+              }
+            }
+            return true;
+          }
+          function DrawStat_SboxAccess() {
+            if ("true" == comidxGlobal.disp_sbox) {
+              if (
+                ("true" == comidxGlobal.sbox_smb_open &&
+                  "true" == comidxGlobal.smb_use) ||
+                ("true" == comidxGlobal.sbox_webdav_open &&
+                  "true" == comidxGlobal.webdav_use)
+              ) {
+                return true;
+              }
+            }
+            return false;
+          }
+          function DrawCGI_SboxAccess() {
+            var cgi_str =
+              "./dsbox.cgi?Flag=Init_Data&CorePGTAG=10&PageFlag=d_sbox.tpl";
+            if ("true" == comidxGlobal.disp_sbox) {
+              if (
+                "true" == comidxGlobal.sbox_smb_open &&
+                "true" == comidxGlobal.smb_use
+              ) {
+                cgi_str += "&FuncTypeFlag=SMB";
+              } else if (
+                "true" == comidxGlobal.sbox_webdav_open &&
+                "true" == comidxGlobal.webdav_use
+              ) {
+                cgi_str += "&FuncTypeFlag=WebDAV";
+              }
+            }
+            return cgi_str;
+          }
+          function GetSboxTitleStr() {
+            if (comidxGlobal.model_sz_a == comidxGlobal.stat_model_sz) {
+              return "Advanced Space Connection Status ";
+            }
+            return "Advanced Box Connection Status ";
+          }
+          function prtjob_menu_idx_tbl() {
+            return new Array(
+              {
+                pgtag_idx: "1",
+                title_str: "Job Status ",
+                cgi_str: "./jstatpri.cgi?Flag=Init_Data&CorePGTAG=1",
+                c_func: true,
+                auth_flg: comidxGlobal.AirAuthGenericFlg,
+                tbl: null,
+              },
+              {
+                pgtag_idx: "2",
+                title_str: "Job Log ",
+                cgi_str: "./jlp.cgi?Flag=Html_Data&LogType=0&CorePGTAG=2",
+                c_func: "true" == comidxGlobal.disp_log,
+                auth_flg: comidxGlobal.AirAuthGenericFlg,
+                tbl: null,
+              }
+            );
+          }
+          function sndjob_menu_idx_tbl() {
+            return new Array(
+              {
+                pgtag_idx: "3",
+                title_str: "Job Status ",
+                cgi_str: "./jsl.cgi?Flag=Init_Data&CorePGTAG=3",
+                c_func: true,
+                auth_flg: comidxGlobal.AirAuthGenericFlg,
+                tbl: null,
+              },
+              {
+                pgtag_idx: "4",
+                title_str: "Job Log ",
+                cgi_str: "./jls.cgi?Flag=Html_Data&CorePGTAG=4",
+                c_func:
+                  "true" == comidxGlobal.has_send &&
+                  "true" == comidxGlobal.disp_log,
+                auth_flg: comidxGlobal.AirAuthGenericFlg,
+                tbl: null,
+              },
+              {
+                pgtag_idx: "4",
+                title_str: "Job Log ",
+                cgi_str: "./jlf.cgi?Flag=Html_Data&LogType=TX&CorePGTAG=4",
+                c_func:
+                  "false" == comidxGlobal.has_send &&
+                  "true" == comidxGlobal.disp_log,
+                auth_flg: comidxGlobal.AirAuthGenericFlg,
+                tbl: null,
+              }
+            );
+          }
+          function rcvjob_menu_idx_tbl() {
+            return new Array(
+              {
+                pgtag_idx: "5",
+                title_str: "Job Status ",
+                cgi_str: "./jrl.cgi?Flag=Init_Data&CorePGTAG=5",
+                c_func: "true" == comidxGlobal.has_fax,
+                auth_flg: comidxGlobal.AirAuthGenericFlg,
+                tbl: null,
+              },
+              {
+                pgtag_idx: "5",
+                title_str: "Job Status ",
+                cgi_str: "./jtl.cgi?CorePGTAG=5",
+                c_func: "false" == comidxGlobal.has_fax,
+                auth_flg: comidxGlobal.AirAuthGenericFlg,
+                tbl: null,
+              },
+              {
+                pgtag_idx: "6",
+                title_str: "Job Log ",
+                cgi_str: "./jlr.cgi?Flag=Html_Data&CorePGTAG=6",
+                c_func:
+                  "true" == comidxGlobal.has_send &&
+                  "true" == comidxGlobal.disp_log,
+                auth_flg: comidxGlobal.AirAuthGenericFlg,
+                tbl: null,
+              },
+              {
+                pgtag_idx: "6",
+                title_str: "Job Log ",
+                cgi_str: "./jlf.cgi?Flag=Html_Data&LogType=RX&CorePGTAG=6",
+                c_func:
+                  "false" == comidxGlobal.has_send &&
+                  "true" == comidxGlobal.disp_log,
+                auth_flg: comidxGlobal.AirAuthGenericFlg,
+                tbl: null,
+              }
+            );
+          }
+          function svjob_menu_idx_tbl() {
+            return new Array(
+              {
+                pgtag_idx: "7",
+                title_str: "Job Status ",
+                cgi_str: "./jsvl.cgi?Flag=Init_Data&CorePGTAG=7",
+                c_func: true,
+                auth_flg: comidxGlobal.AirAuthGenericFlg,
+                tbl: null,
+              },
+              {
+                pgtag_idx: "8",
+                title_str: "Job Log ",
+                cgi_str: "./jlsv.cgi?Flag=Html_Data&CorePGTAG=8",
+                c_func: "true" == comidxGlobal.disp_log,
+                auth_flg: comidxGlobal.AirAuthGenericFlg,
+                tbl: null,
+              }
+            );
+          }
+          return new Array(
+            {
+              pgtag_idx: null,
+              title_str: CpyJobDrawCondition() ? "Copy/Print " : "Print ",
+              cgi_str: null,
+              c_func: true,
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: prtjob_menu_idx_tbl(),
+            },
+            {
+              pgtag_idx: null,
+              title_str: "Send ",
+              cgi_str: null,
+              c_func: SndJobDrawCondition(),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: sndjob_menu_idx_tbl(),
+            },
+            {
+              pgtag_idx: null,
+              title_str: "Receive ",
+              cgi_str: null,
+              c_func: RcvJobDrawCondition(),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: rcvjob_menu_idx_tbl(),
+            },
+            {
+              pgtag_idx: null,
+              title_str: "Store ",
+              cgi_str: null,
+              c_func: SvJobDrawCondition(),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: svjob_menu_idx_tbl(),
+            },
+            {
+              pgtag_idx: "9",
+              title_str: "Error Information ",
+              cgi_str: "./dstatus.cgi?CorePGTAG=9&PageFlag=d_sts2.tpl",
+              c_func: true,
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "10",
+              title_str: GetSboxTitleStr(),
+              cgi_str: DrawCGI_SboxAccess(),
+              c_func: DrawStat_SboxAccess(),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "11",
+              title_str: "Consumables ",
+              cgi_str: "./dstatus.cgi?CorePGTAG=11",
+              c_func: true,
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "12",
+              title_str: "Device Features ",
+              cgi_str: "./dfeat.cgi?CorePGTAG=12",
+              c_func: true,
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "13",
+              title_str: "Device Information ",
+              cgi_str: "./dinfo.cgi?CorePGTAG=13",
+              c_func: true,
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "14",
+              title_str: "Check Counter ",
+              cgi_str: "./dcounter.cgi?CorePGTAG=14",
+              c_func: true,
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            }
+          );
+        })();
+      };
+      com_index.box = new com_index_base_interface();
+      function Box_FaxSysBoxDrawCondition() {
+        if ("false" == comidxGlobal.disp_box) {
+          return false;
+        }
+        if (
+          "false" == comidxGlobal.has_send &&
+          "false" == comidxGlobal.has_fax
+        ) {
+          return false;
+        }
+        if ("false" == comidxGlobal.has_reader) {
+          return false;
+        }
+        if (
+          "false" == comidxGlobal.has_sendpkg &&
+          "false" == comidxGlobal.has_faxpkg
+        ) {
+          return false;
+        }
+        return true;
+      }
+      com_index.box.createTbl = function () {
+        com_index.box.tbl = (function () {
+          return new Array(
+            {
+              pgtag_idx: "16",
+              title_str: "Mail Box ",
+              cgi_str: "./bpbl.cgi?CorePGTAG=16&BoxKind=UserBox",
+              c_func:
+                "true" == comidxGlobal.VARIE_BOX_USER &&
+                "true" == comidxGlobal.disp_box,
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "17",
+              title_str: "Memory RX Inbox ",
+              cgi_str: "./bpbl.cgi?CorePGTAG=17&BoxKind=SysBox",
+              c_func: Box_FaxSysBoxDrawCondition(),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "18",
+              title_str: "Confidential Fax Inbox ",
+              cgi_str: "./bpbl.cgi?CorePGTAG=18&BoxKind=FaxBox",
+              c_func: Box_FaxSysBoxDrawCondition(),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            }
+          );
+        })();
+      };
+      com_index.direct = new com_index_base_interface();
+      com_index.direct.createTbl = function () {
+        com_index.direct.tbl = (function () {
+          return new Array(
+            {
+              pgtag_idx: "19",
+              title_str: "PDF File ",
+              cgi_str: "./ppdf.cgi?CorePGTAG=19&Type=PDF",
+              c_func: "true" == comidxGlobal.has_pdf,
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "20",
+              title_str: "true" == "true" ? "PS/EPS File " : "PS File ",
+              cgi_str: "./ppdf.cgi?CorePGTAG=20&Type=PS",
+              c_func:
+                "true" == comidxGlobal.has_ps || "true" == comidxGlobal.has_psk,
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "21",
+              title_str: "Image File ",
+              cgi_str: "./pimg.cgi?CorePGTAG=21",
+              c_func: "true" == comidxGlobal.has_img,
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "22",
+              title_str: "XPS File ",
+              cgi_str: "./pxps.cgi?CorePGTAG=22",
+              c_func: "true" == comidxGlobal.has_xps,
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "23",
+              title_str: "Dummy ",
+              cgi_str: "./pmso.cgi?CorePGTAG=23",
+              c_func: "true" == comidxGlobal.has_mso,
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            }
+          );
+        })();
+      };
+      com_index.address = new com_index_base_interface();
+      com_index.address.createTbl = function () {
+        com_index.address.tbl = (function () {
+          return new Array({
+            pgtag_idx: "24",
+            title_str: "Address Lists ",
+            cgi_str: "./asublist.cgi?CorePGTAG=24&AMOD=0",
+            c_func: Adrs_NormalAdrsDrawCondition(),
+            auth_flg: comidxGlobal.AirAuthGenericFlg,
+            tbl: null,
+          });
+        })();
+      };
+      com_index.usermode = new com_index_base_interface();
+      function GetComidxUmdTbl() {
+        function Stat_SendFaxAirfaxClie() {
+          return (
+            "true" == comidxGlobal.has_send ||
+            "true" == comidxGlobal.has_fax ||
+            "true" == comidxGlobal.has_airfax_clie
+          );
+        }
+        function DrawStat_FuncCopy() {
+          if (
+            "true" == comidxGlobal.disp_copy &&
+            "true" == comidxGlobal.has_reader
+          ) {
+            if (UmdMenuTbl.MenuBridge(UmdMenuTbl.FucCpyMainTBL)) {
+              return true;
+            }
+          }
+          return false;
+        }
+        function DrawStat_FuncSend() {
+          if ("true" == comidxGlobal.disp_send) {
+            if (UmdMenuTbl.MenuBridge(UmdMenuTbl.FucSndMainTBL)) {
+              return true;
+            }
+          }
+          return false;
+        }
+        function DrawStat_FuncRecv() {
+          if ("true" == comidxGlobal.disp_send) {
+            if (UmdMenuTbl.MenuBridge(UmdMenuTbl.FucRecMainTBL)) {
+              return true;
+            }
+          }
+          return false;
+        }
+        function DrawStat_FuncSav() {
+          if ("true" == comidxGlobal.disp_sys_fax_box) {
+            if (UmdMenuTbl.MenuBridge(UmdMenuTbl.FucSavMainTBL)) {
+              return true;
+            }
+          }
+          return false;
+        }
+        function config_menu_env_tbl() {
+          return new Array(
+            {
+              pgtag_idx: "25",
+              title_str: "Paper Settings ",
+              cgi_str: "./cdmenu.cgi?CorePGTAG=25",
+              c_func: UmdMenuTbl.MenuBridge(UmdMenuTbl.EnvPapMainTBL),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "26",
+              title_str: "Display Settings ",
+              cgi_str: "./cdmenu.cgi?CorePGTAG=26",
+              c_func: UmdMenuTbl.MenuBridge(UmdMenuTbl.EnvIndMainTBL),
+              auth_flg:
+                comidxGlobal.AirAuthDeviceFlg | comidxGlobal.AirAuthSystemFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "27",
+              title_str: "Timer/Energy Settings ",
+              cgi_str: "./cdmenu.cgi?CorePGTAG=27",
+              c_func: UmdMenuTbl.MenuBridge(UmdMenuTbl.EnvTimMainTBL),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "28",
+              title_str: "Network Settings ",
+              cgi_str:
+                "/NetworkSettings/page/?CorePGTAG=28&Flag=Init_Data&PageFlag=c_envnet.tpl&FuncTypeFlag=NetworkMenu_Page",
+              c_func: UmdMenuTbl.MenuBridge(UmdMenuTbl.EnvNetMainTBL),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "29",
+              title_str: "External Interface ",
+              cgi_str: "./cdmenu.cgi?CorePGTAG=29",
+              c_func: UmdMenuTbl.MenuBridge(UmdMenuTbl.EnvIntMainTBL),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "30",
+              title_str: "Volume Settings ",
+              cgi_str: "./cdmenu.cgi?CorePGTAG=30",
+              c_func: UmdMenuTbl.MenuBridge(UmdMenuTbl.EnvVolMainTBL),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            }
+          );
+        }
+        function config_menu_mainte_tbl() {
+          return new Array(
+            {
+              pgtag_idx: "31",
+              title_str: "Adjust Image Quality ",
+              cgi_str: "./cdmenu.cgi?CorePGTAG=31",
+              c_func: UmdMenuTbl.MenuBridge(UmdMenuTbl.AdjMntMainTBL),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "32",
+              title_str: "Maintenance ",
+              cgi_str: "./cdmenu.cgi?CorePGTAG=32",
+              c_func: UmdMenuTbl.MenuBridge(UmdMenuTbl.AdjMntMntMainTBL),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            }
+          );
+        }
+        function config_menu_func_tbl() {
+          return new Array(
+            {
+              pgtag_idx: "33",
+              title_str: "Common Settings ",
+              cgi_str: "./cdmenu.cgi?CorePGTAG=33",
+              c_func: UmdMenuTbl.MenuBridge(UmdMenuTbl.FucComMainTBL),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "34",
+              title_str: "Copy ",
+              cgi_str: "./cdmenu.cgi?CorePGTAG=34",
+              c_func: DrawStat_FuncCopy(),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "35",
+              title_str: "Printer ",
+              cgi_str: "./cdmenu.cgi?CorePGTAG=35",
+              c_func: UmdMenuTbl.MenuBridge(UmdMenuTbl.FucPriMainTBL),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "36",
+              title_str: "Send ",
+              cgi_str: "./cdmenu.cgi?CorePGTAG=36",
+              c_func: DrawStat_FuncSend(),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "37",
+              title_str: "Receive/Forward ",
+              cgi_str: "./cdmenu.cgi?CorePGTAG=37",
+              c_func: DrawStat_FuncRecv(),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "38",
+              title_str: "Store/Access Files ",
+              cgi_str: "./cdmenu.cgi?CorePGTAG=38",
+              c_func: DrawStat_FuncSav(),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            }
+          );
+        }
+        function config_menu_manage_tbl() {
+          return new Array(
+            {
+              pgtag_idx: "40",
+              title_str: "User Management ",
+              cgi_str: "./cdmenu.cgi?CorePGTAG=40",
+              c_func: UmdMenuTbl.MenuBridge(UmdMenuTbl.MngUsrMainTBL),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "41",
+              title_str: "Device Management ",
+              cgi_str: "./cdmenu.cgi?CorePGTAG=41",
+              c_func: UmdMenuTbl.MenuBridge(UmdMenuTbl.MngDevMainTBL),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "42",
+              title_str: "License/Other ",
+              cgi_str: "./cdmenu.cgi?CorePGTAG=42",
+              c_func: UmdMenuTbl.MenuBridge(UmdMenuTbl.MngLicMainTBL),
+              auth_flg: comidxGlobal.AirAuthSystemFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "43",
+              title_str: "Data Management ",
+              cgi_str: "./cdmenu.cgi?CorePGTAG=43",
+              c_func: UmdMenuTbl.MenuBridge(UmdMenuTbl.MngDatMainTBL),
+              auth_flg: comidxGlobal.AirAuthSystemFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: "44",
+              title_str: "Security Settings ",
+              cgi_str: "./cdmenu.cgi?CorePGTAG=44&Token=21932990161657665071",
+              c_func: UmdMenuTbl.MenuBridge(UmdMenuTbl.MngSecMainTBL),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            }
+          );
+        }
+        function DrawStat_AdrsMain() {
+          if (Adrs_NormalAdrsDrawCondition()) {
+            if (UmdMenuTbl.MenuBridge(UmdMenuTbl.AdrsMainTBL)) {
+              return true;
+            }
+          }
+          return false;
+        }
+        if ("true" == comidxGlobal.IsRestrictedUser) {
+          return [
+            {
+              pgtag_idx: null,
+              title_str: "Management Settings ",
+              cgi_str: null,
+              c_func: null,
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: [
+                {
+                  pgtag_idx: "40",
+                  title_str: "User Management ",
+                  cgi_str: "./cdmenu.cgi?CorePGTAG=40",
+                  c_func: UmdMenuTbl.MenuBridge(UmdMenuTbl.MngUsrMainACQTBL),
+                  auth_flg: comidxGlobal.AirAuthGenericFlg,
+                  tbl: null,
+                },
+              ],
+            },
+          ];
+        } else {
+          return new Array(
+            {
+              pgtag_idx: null,
+              title_str: "Preferences ",
+              cgi_str: null,
+              c_func: null,
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: config_menu_env_tbl(),
+            },
+            {
+              pgtag_idx: null,
+              title_str: "Adjustment/Maintenance ",
+              cgi_str: null,
+              c_func: null,
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: config_menu_mainte_tbl(),
+            },
+            {
+              pgtag_idx: null,
+              title_str: "Function Settings ",
+              cgi_str: null,
+              c_func: null,
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: config_menu_func_tbl(),
+            },
+            {
+              pgtag_idx: "39",
+              title_str: "Set Destination ",
+              cgi_str: "./cdmenu.cgi?CorePGTAG=39",
+              c_func: DrawStat_AdrsMain(),
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: null,
+            },
+            {
+              pgtag_idx: null,
+              title_str: "Management Settings ",
+              cgi_str: null,
+              c_func: null,
+              auth_flg: comidxGlobal.AirAuthGenericFlg,
+              tbl: config_menu_manage_tbl(),
+            }
+          );
+        }
+      }
+      com_index.usermode.createTbl = function () {
+        if ("undefined" == typeof UmdMenuTbl) {
+          com_index.usermode.tbl = null;
+          return;
+        }
+        com_index.usermode.tbl = UmdMenuTbl.UmdDrawStatCheck(GetComidxUmdTbl());
+      };
+      //]]>
+    </script>
+
+    <script language="JavaScript" type="text/javascript">
+      //<![CDATA[
+      function ComMkup_RuiCommons() {
+        var title = "imageRUNNER ADVANCE ";
+        if ("true" == "false") {
+          title = "Satera ";
+        } else if ("true" == "false") {
+          title = "imagePRESS ";
+        } else {
+          if ("false" == "true") {
+            title = "imageRUNNER ";
+          }
+        }
+        document.writeln('<div id="ruiCommons">');
+        document.writeln('<div class="Wrapper">');
+        document.writeln('<div id="commonBranding">');
+        document.writeln('<h1 id="deviceLogo">');
+        if (aapFromAirPrint()) {
+          document.writeln(
+            '<img src="media/favicon.png" width="16" height="16" alt="" title="" \/>'
+          );
+          document.writeln("<span>");
+          document.writeln(title);
+          document.writeln("<\/span>");
+        } else {
+          document.writeln('<a href="http://192.168.20.212:8000">');
+          document.writeln(
+            '<img src="media/favicon.png" width="16" height="16" alt="" title="" \/>'
+          );
+          document.writeln("<span>");
+          document.writeln(title);
+          document.writeln("<\/span>");
+          document.writeln("<\/a>");
+        }
+        document.writeln("<\/h1>");
+        document.writeln('<p id="deviceType">');
+        document.writeln('<span class="Supplement">Device Type : <\/span>');
+        document.writeln(
+          '<span id="deviceName">iR-ADV C3525 III / iR-ADV C3525 III / BCN 6th Floor Hallway <\/span>'
+        );
+        document.writeln("<\/p>");
+        document.writeln("<\/div>");
+        document.writeln('<div id="commonTools">');
+        document.writeln('<fieldset id="moveTools">');
+        document.writeln("<legend>Move <\/legend>");
+        document.writeln("<p>");
+        if (!aapFromAirPrint()) {
+          document.writeln(
+            '<a href="http://192.168.20.212:8000"><span class="Name">To Portal <\/span><\/a>'
+          );
+        }
+        document.writeln("<\/p>");
+        document.writeln("<\/fieldset>");
+        if ("true" == "true") {
+          document.writeln('<fieldset id="authTools">');
+          document.writeln("<legend>Authentication <\/legend>");
+          if ("false" == "false") {
+            document.writeln('<p id="loginUserData">');
+            document.writeln('<span class="Supplement">Login User : <\/span>');
+            document.writeln('<span id="userName">0006813 <\/span>');
+            document.writeln("<\/p>");
+            document.writeln("<p>");
+          }
+          document.writeln(
+            '<a href="/logout"><span class="Name">Log Out <\/span><\/a>'
+          );
+          document.writeln("<\/p>");
+          document.writeln("<\/fieldset>");
+        }
+        document.writeln("<\/div>");
+        document.writeln("<\/div>");
+        document.writeln("<hr \/>");
+        document.writeln("<\/div>");
+      }
+      function aapFromAirPrint() {
+        return "true" == "false";
+      }
+      function ComMkup_ApplicationBranding() {
+        if (aapFromAirPrint()) {
+          AirPrint_ApplicationBranding();
+        } else {
+          Legacy_ApplicationBranding();
+        }
+      }
+      function AirPrint_ApplicationBranding() {
+        document.writeln('<div id="applicationBranding">');
+        document.writeln('<div class="Wrapper">');
+        document.writeln('<h1 id="applicationLogo"></h1>');
+        document.writeln("</div>");
+        document.writeln("</div>");
+      }
+      function Legacy_ApplicationBranding() {
+        var message_tbl = {
+          9: { media: "device_icon.png", msg: "Status Monitor/Cancel" },
+          10: { media: "device_icon.png", msg: "Status Monitor/Cancel" },
+          11: { media: "device_icon.png", msg: "Status Monitor/Cancel" },
+          13: { media: "device_icon.png", msg: "Status Monitor/Cancel" },
+          12: { media: "device_icon.png", msg: "Status Monitor/Cancel" },
+          14: { media: "device_icon.png", msg: "Status Monitor/Cancel" },
+          1: { media: "device_icon.png", msg: "Status Monitor/Cancel" },
+          2: { media: "device_icon.png", msg: "Status Monitor/Cancel" },
+          7: { media: "device_icon.png", msg: "Status Monitor/Cancel" },
+          8: { media: "device_icon.png", msg: "Status Monitor/Cancel" },
+          3: { media: "device_icon.png", msg: "Status Monitor/Cancel" },
+          4: { media: "device_icon.png", msg: "Status Monitor/Cancel" },
+          5: { media: "device_icon.png", msg: "Status Monitor/Cancel" },
+          6: { media: "device_icon.png", msg: "Status Monitor/Cancel" },
+          16: { media: "box_icon.png", msg: "Access Received/Stored Files" },
+          17: { media: "box_icon.png", msg: "Access Received/Stored Files" },
+          18: { media: "box_icon.png", msg: "Access Received/Stored Files" },
+          19: { media: "directprint_icon.png", msg: "Direct Print" },
+          20: { media: "directprint_icon.png", msg: "Direct Print" },
+          21: { media: "directprint_icon.png", msg: "Direct Print" },
+          22: { media: "directprint_icon.png", msg: "Direct Print" },
+          23: { media: "directprint_icon.png", msg: "Direct Print" },
+          24: { media: "address_icon.png", msg: "Address Book" },
+          25: { media: "usermode_icon.png", msg: "Settings/Registration" },
+          26: { media: "usermode_icon.png", msg: "Settings/Registration" },
+          27: { media: "usermode_icon.png", msg: "Settings/Registration" },
+          28: { media: "usermode_icon.png", msg: "Settings/Registration" },
+          29: { media: "usermode_icon.png", msg: "Settings/Registration" },
+          30: { media: "usermode_icon.png", msg: "Settings/Registration" },
+          31: { media: "usermode_icon.png", msg: "Settings/Registration" },
+          32: { media: "usermode_icon.png", msg: "Settings/Registration" },
+          33: { media: "usermode_icon.png", msg: "Settings/Registration" },
+          34: { media: "usermode_icon.png", msg: "Settings/Registration" },
+          35: { media: "usermode_icon.png", msg: "Settings/Registration" },
+          36: { media: "usermode_icon.png", msg: "Settings/Registration" },
+          37: { media: "usermode_icon.png", msg: "Settings/Registration" },
+          38: { media: "usermode_icon.png", msg: "Settings/Registration" },
+          39: { media: "usermode_icon.png", msg: "Settings/Registration" },
+          40: { media: "usermode_icon.png", msg: "Settings/Registration" },
+          41: { media: "usermode_icon.png", msg: "Settings/Registration" },
+          42: { media: "usermode_icon.png", msg: "Settings/Registration" },
+          43: { media: "usermode_icon.png", msg: "Settings/Registration" },
+          44: { media: "usermode_icon.png", msg: "Settings/Registration" },
+        };
+        if ("false" == "true" || "false" == "true") {
+          message_tbl[16] = {
+            media: "box_fax_icon.png",
+            msg: "Fax/I-Fax Inbox",
+          };
+          message_tbl[17] = {
+            media: "box_fax_icon.png",
+            msg: "Fax/I-Fax Inbox",
+          };
+          message_tbl[18] = {
+            media: "box_fax_icon.png",
+            msg: "Fax/I-Fax Inbox",
+          };
+        }
+        var target_tbl = message_tbl[1];
+        document.writeln('<div id="applicationBranding">');
+        document.writeln('<div class="Wrapper">');
+        if (target_tbl) {
+          document.write('<h1 id="applicationLogo">');
+          document.write('<img src="media/' + target_tbl.media);
+          document.write(
+            '" width="32" height="32" alt="' + target_tbl.msg + '" title="" \/>'
+          );
+          document.write('<span class="BrandingName">');
+          document.write(target_tbl.msg);
+          document.write("<\/span>");
+          document.write("<\/h1>");
+          document.writeln('<div id="appTools">');
+          document.writeln(
+            '<a href="mailto:"><span class="Name">E-Mail to System Manager <\/span><\/a>'
+          );
+          document.writeln("<\/div>");
+        }
+        document.writeln("<\/div>");
+        document.writeln("<\/div>");
+        document.writeln("<hr \/>");
+      }
+      function ComMkup_NavTopicPath(obj) {
+        document.writeln('<div id="navTopicPath">');
+        document.writeln("<h4>Path <\/h4>");
+        obj.tpcp_lst_draw();
+        document.writeln("<\/div>");
+      }
+      function ComMkup_ContentHeading(title_name) {
+        document.writeln('<div id="contentHeading">');
+        document.write('<h2 class="PageName">');
+        document.write(title_name);
+        document.write("<\/h2>");
+        document.writeln('<div id="contentHeadingTools">');
+        document.writeln('<div id="tmpUpdate" x-ms-format-detection="none">');
+        document.writeln("Last Updated : 07/12 2021 10:25:27");
+        document.writeln("<\/div>");
+        document.writeln('<div id="tmpReload">');
+        document.writeln(
+          '<a href="javascript:reload_click()"><img src="media/bh_updt.gif" alt="Update " title="Update " height="22" width="22" \/><\/a>'
+        );
+        document.writeln("<\/div>");
+        document.writeln("<\/div>");
+        document.writeln("<\/div>");
+      }
+      function ComMkup_ContentHeadingNoReload(title_name) {
+        document.writeln('<div id="contentHeading">');
+        document.write('<h2 class="PageName">');
+        document.write(title_name);
+        document.write("<\/h2>");
+        document.writeln('<div id="contentHeadingTools">');
+        document.writeln('<div id="tmpUpdate" x-ms-format-detection="none">');
+        document.writeln("Last Updated : 07/12 2021 10:25:27");
+        document.writeln("<\/div>");
+        document.writeln("<\/div>");
+        document.writeln("<\/div>");
+      }
+      function ComMkup_TmpFooter() {
+        document.writeln('<div id="tmpFooter">');
+        document.writeln("<hr \/>");
+        document.writeln('<div class="GotoTop">');
+        document.writeln(
+          '<a href="javascript:scrollTo(0,0);"><img src="media/ba_ptp.gif" width="16" height="16" alt="Back to Page Top " title="Back to Page Top " \/><\/a>'
+        );
+        document.writeln("<\/div>");
+        document.writeln("<\/div>");
+      }
+      function ComMkup_NavigationWrapper() {
+        document.writeln('<div id="navigationWrapper">');
+        document.writeln('<div id="navigation">');
+        document.writeln("<h2>Menu <\/h2>");
+        ComIdx_DrawLink();
+        document.writeln("<\/div>");
+        document.writeln("<\/div>");
+      }
+      function ComMkup_ApplicationInfo() {
+        document.writeln('<div id="applicationInfo">');
+        document.writeln(
+          '<address class="SiteInforLegal">Copyright CANON INC. 2011 All Rights Reserved<\/address>'
+        );
+        document.writeln("<\/div>");
+      }
+      function Draw_ContModEditStart(title) {
+        document.writeln('<div class="ContentModuleEditable">');
+        if (null != title) {
+          document.writeln('<div class="ModuleHeading">');
+          document.writeln("<h4>");
+          document.writeln(title);
+          document.writeln("<\/h4>");
+          document.writeln("<\/div>");
+        }
+      }
+      function Draw_ContModEditEnd() {
+        document.writeln("<\/div>");
+      }
+      function Draw_ModuleElementeStart(title) {
+        document.writeln('<div class="ModuleElement">');
+        if (null != title) {
+          document.writeln("<h5>");
+          document.writeln(title);
+          document.writeln("<\/h5>");
+        }
+        document.writeln(
+          '<table class="PropertyListComponent" rules="groups" >'
+        );
+        document.writeln("<colgroup>");
+        document.writeln('<col class="ItemNameColumn" \/>');
+        document.writeln('<col class="ItemValueColumn" \/>');
+        document.writeln("<\/colgroup>");
+        document.writeln("<thead>");
+        document.writeln("<tr>");
+        document.writeln("<th>");
+        document.writeln("Item ");
+        document.writeln("<\/th>");
+        document.writeln("<th>");
+        document.writeln("Details ");
+        document.writeln("<\/th>");
+        document.writeln("<\/tr>");
+        document.writeln("<\/thead>");
+      }
+      function Draw_ModuleElementeEnd() {
+        document.writeln("<\/table>");
+        document.writeln("<\/div>");
+      }
+      //]]>
+    </script>
+    <script language="JavaScript" type="text/javascript">
+      //<![CDATA[
+      function ComMkup_ApplicationInfo() {
+        document.writeln('<div id="applicationInfo">');
+        document.writeln(
+          '<address class="SiteInforLegal">Copyright CANON INC. 2019 <\/address>'
+        );
+        document.writeln("<\/div>");
+      }
+      //]]>
+    </script>
+
+    <div id="container">
+      <script language="JavaScript" type="text/javascript">
+        //<![CDATA[
+        ComMkup_RuiCommons();
+        //]]>
+      </script>
+      <div id="applications">
+        <script language="JavaScript" type="text/javascript">
+          //<![CDATA[
+          ComMkup_ApplicationBranding();
+          //]]>
+        </script>
+        <div id="applicationContents">
+          <div class="Wrapper">
+            <div id="contentsWrapper">
+              <div id="contents">
+                <div class="ContentModule">
+                  <div class="MsgModule">
+                    <div class="Normal">
+                      <p class="MainMessage">
+                        Sending the Direct Print job is complete.
+                      </p>
+                      <p class="SubMessage">Check this job in the job list.</p>
+                      <input
+                        type="button"
+                        class="ButtonEnable"
+                        value="To Job List "
+                        onclick="go_jobindex()"
+                      />
+                      <input
+                        type="button"
+                        class="ButtonEnable"
+                        value="Back to Previous Page "
+                        onclick="return_click()"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <script language="JavaScript" type="text/javascript">
+                  //<![CDATA[
+                  ComMkup_TmpFooter();
+                  //]]>
+                </script>
+              </div>
+            </div>
+            <hr />
+            <script language="JavaScript" type="text/javascript">
+              //<![CDATA[
+              ComMkup_NavigationWrapper();
+              //]]>
+            </script>
+          </div>
+        </div>
+        <hr />
+        <script language="JavaScript" type="text/javascript">
+          //<![CDATA[
+          ComMkup_ApplicationInfo();
+          //]]>
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
